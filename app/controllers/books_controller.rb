@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   end
 
   def new
+    @a = Tools::Scrap.new.hello
   end
 
   def create
