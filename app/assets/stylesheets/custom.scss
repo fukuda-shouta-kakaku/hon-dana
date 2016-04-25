@@ -80,7 +80,22 @@ body{
     color: #333;
     font-size: 14px;
     font-family: Meiryo, "MS PGothic", arial, sans-serif;
-    background-color: #f5f5f5;
     width: 100%;
     padding:0px;
+    background-color:#f8f8f8;
 }
+
+#main_content{
+    padding:30px 0px;
+    background-color:#fff;
+}
+
+#footer{
+    border-bottom:0px;
+    text-align:center;
+    padding:20px;
+}
+
+#header{
+   margin-bottom:0px;
+}   
