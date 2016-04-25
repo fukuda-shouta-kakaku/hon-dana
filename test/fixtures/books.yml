@@ -15,3 +15,31 @@ two:
   author: MyString
   publisher: MyString
   published_at: 2016-04-25
+three:
+  id: 3
+  amazon_id: 1
+  title: MyString
+  author: MyString
+  publisher: MyString
+  published_at: 2016-04-25
+four:
+  id: 4
+  amazon_id: 2
+  title: MyString
+  author: MyString
+  publisher: MyString
+  published_at: 2016-04-25
+five:
+  id: 5
+  amazon_id: 1
+  title: MyString
+  author: MyString
+  publisher: MyString
+  published_at: 2016-04-25
+six:
+  id: 6
+  amazon_id: 2
+  title: MyString
+  author: MyString
+  publisher: MyString
+  published_at: 2016-04-25
