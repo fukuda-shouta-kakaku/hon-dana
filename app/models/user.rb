@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   validates :description, length: { maximum: 140 }
   has_secure_password
 
+  has_many :reviews, dependent: :destroy
 end
