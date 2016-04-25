@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amazon_id: 
+  title: MyString
+  author: MyString
+  publisher: MyString
+  published_at: 2016-04-25
+
+two:
+  amazon_id: 
+  title: MyString
+  author: MyString
+  publisher: MyString
+  published_at: 2016-04-25
