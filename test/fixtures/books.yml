@@ -6,7 +6,9 @@ one:
   title: MyString
   author: MyString
   publisher: MyString
+  page: 100
   published_at: 2016-04-25
+  image_src: http://ecx.images-amazon.com/images/I/51zS8QNJtRL._SX389_BO1,204,203,200_.jpg
 
 two:
   id: 2
@@ -14,32 +16,43 @@ two:
   title: MyString
   author: MyString
   publisher: MyString
+  page: 200
   published_at: 2016-04-25
+  image_src: http://ecx.images-amazon.com/images/I/51zS8QNJtRL._SX389_BO1,204,203,200_.jpg
+
 three:
   id: 3
   amazon_id: 1
   title: MyString
   author: MyString
   publisher: MyString
+  page: 100
   published_at: 2016-04-25
+  image_src: http://ecx.images-amazon.com/images/I/51zS8QNJtRL._SX389_BO1,204,203,200_.jpg
 four:
   id: 4
   amazon_id: 2
   title: MyString
   author: MyString
   publisher: MyString
+  page: 100
   published_at: 2016-04-25
+  image_src: http://ecx.images-amazon.com/images/I/51zS8QNJtRL._SX389_BO1,204,203,200_.jpg
 five:
   id: 5
   amazon_id: 1
   title: MyString
   author: MyString
   publisher: MyString
+  page: 100
   published_at: 2016-04-25
+  image_src: http://ecx.images-amazon.com/images/I/51zS8QNJtRL._SX389_BO1,204,203,200_.jpg
 six:
   id: 6
   amazon_id: 2
   title: MyString
   author: MyString
   publisher: MyString
+  page: 100
   published_at: 2016-04-25
+  image_src: http://ecx.images-amazon.com/images/I/51zS8QNJtRL._SX389_BO1,204,203,200_.jpg
