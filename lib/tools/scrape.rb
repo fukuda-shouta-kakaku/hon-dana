@@ -14,11 +14,27 @@ module Tools
       retry_count = 0
       begin
         @doc = Nokogiri::HTML(open(@uri))
-      rescue OpenURI::HTTPError => error
+      rescue OpenURI::HTTPError
         retry_count += 1
         retry if retry_count < 3
       end
     end
+
+    def get_params
+      publisher, published_at = publisher_and_published_at
+
+      {
+        amazon_id: amazon_id,
+        title: title,
+        author: author,
+        publisher: publisher,
+        published_at: published_at,
+        page: page,
+        image_src: image_src
+      }
+    end
+
+    private
 
     def amazon_id
       @amazon_id ||= @doc.css('#detail_bullets_id').css('li').each {|li| break li.children.last.text.strip if /ISBN-10/.match(li.children.first) }
