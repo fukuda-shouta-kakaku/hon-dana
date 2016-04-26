@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426011236) do
+ActiveRecord::Schema.define(version: 20160425065515) do
 
   create_table "books", force: :cascade do |t|
     t.integer  "amazon_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160426011236) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "description"
   end
 
 end

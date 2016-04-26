@@ -1,0 +1,108 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header_input{
+    width:300px;
+    float:left;
+    margin-top:5px;
+}
+
+body{
+    word-break: break-all;
+    line-height: 200%;
+    color: #333;
+    font-size: 14px;
+    font-family: Meiryo, "MS PGothic", arial, sans-serif;
+    width: 100%;
+    padding:0px;
+    background-color:#f8f8f8;
+}
+
+#main_content{
+    padding:30px 0px;
+    background-color:#fff;
+}
+
+#footer{
+    border-bottom:0px;
+    text-align:center;
+    padding:20px;
+}
+
+#header{
+   margin-bottom:0px;
+}
+.alert {
+  position: fixed;
+  top: 50px; /* nav-bar's height */
+  left: 10%;
+  width: 80%;
+  height: 60px;
+}
