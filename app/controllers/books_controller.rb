@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @a = Tools::Scrap.new.hello
+    @scraped = Tools::Scrape.new(params[:search])
   end
 
   def create

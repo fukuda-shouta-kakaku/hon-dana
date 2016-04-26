@@ -1,1 +1,8 @@
-<%= @a %>
+<p>amazon_id: <%= @scraped.amazon_id %></p>
+<p>title: <%= @scraped.title %></p>
+<p>author: <%= @scraped.author %></p>
+<% publisher, published_at = @scraped.publisher_and_published_at %>
+<p>publisher: <%= publisher %></p>
+<p>published_at: <%= published_at %></p>
+<p>page: <%= @scraped.page %></p>
+<p>img_src: <%= @scraped.image_src %></p>
