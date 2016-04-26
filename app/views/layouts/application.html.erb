@@ -9,7 +9,10 @@
 <body>
 <%= render 'layouts/header' %>
 <div id="main_content" class="clearfix">
-    <%= yield %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %> text-center"><%= message %></div>
+  <% end %>
+  <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
 </body>

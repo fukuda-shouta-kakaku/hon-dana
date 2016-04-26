@@ -103,3 +103,12 @@ body{
 h1{
  margin:10px;  
 }
+
+.alert {
+  position: fixed;
+  top: 50px; /* nav-bar's height */
+  left: 10%;
+  width: 80%;
+  height: 60px;
+}
+
