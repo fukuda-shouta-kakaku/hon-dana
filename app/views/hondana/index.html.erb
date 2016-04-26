@@ -1,2 +1,6 @@
 <h1>new book reviews</h1>
-<%= render partial: 'users/books', collection: @books %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render partial: 'shared/books', collection: @books %>
+    </div>
+</div>
