@@ -8,11 +8,11 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-<div id="main_content">
+<div id="main_content" class="clearfix">
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %> text-center"><%= message %></div>
   <% end %>
-    <%= yield %>
+  <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
 </body>
