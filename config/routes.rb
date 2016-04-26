@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
- 
+
+  resources :books, only: [:create]
+  resources :reviews, only: [:new, :create, :destroy, :edit]
+
   root to: 'hondana#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

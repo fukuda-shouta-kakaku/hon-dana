@@ -1,0 +1,17 @@
+<p>amazon_id: <%= book.amazon_id %></p>
+<p>title: <%= book.title %></p>
+<p>author: <%= book.author %></p>
+<p>publisher: <%= book.publisher %></p>
+<p>published_at: <%= book.published_at %></p>
+<p>page: <%= book.page %></p>
+<p>img_src: <%= book.image_src %></p>
+
+<%= form_for review, { controller: :reviews, action: :create } do |f| %>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body, row: 5 %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :book_id, value: book.id%>
+  <%= f.submit 'Create New Review' %>
+<% end %>

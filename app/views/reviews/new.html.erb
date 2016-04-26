@@ -1,0 +1,7 @@
+<%= form_tag({ controller: :books, action: :create }, remote: true) do %>
+<%= text_field_tag :search, '', size: 100 %>
+<%= submit_tag '検索' %>
+<% end %>
+
+<div id="book_info">
+</div>
