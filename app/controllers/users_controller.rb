@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
+    @reviews = Review.includes(:book).includes(:user).where("reviews.user_id =?",@user.id).limit(30).order("id desc")
   end
 
   def new

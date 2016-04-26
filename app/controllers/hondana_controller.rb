@@ -1,5 +1,5 @@
 class HondanaController < ApplicationController
   def index 
-    @books = Book.all;
+    @reviews = Review.includes(:book).includes(:user).limit(30).order("id desc")
   end
 end
