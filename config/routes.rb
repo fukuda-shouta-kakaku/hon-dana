@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :books
+  resources :reviews
 
   root to: 'hondana#index'
 

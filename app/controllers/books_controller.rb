@@ -7,12 +7,30 @@ class BooksController < ApplicationController
   end
 
   def create
-    @scraped = Tools::Scrape.new(params[:search]).get_params
-    @book = Book.find_by(amazon_id: @scraped[:amazon_id])
-    @book = Book.new(@scraped)
-    if @book.save
+    scraped = Tools::Scrape.new(params[:search])
+    unless scraped.success
+      @msg = 'failed get book info'
+      render 'shared/error_ajax'
+      return
+    end
+    parameter = scraped.get_params
 
-    puts @scraped
+    @book = Book.find_by(amazon_id: parameter[:amazon_id])
+    if current_user.review_books.include?(@book)
+      @msg = 'already exist review'
+      render 'shared/error_ajax'
+      return
+    end
+
+    unless @book
+      @book = Book.new(parameter)
+      unless @book.save
+        @msg = 'faile create book'
+        render 'shared/error_ajax'
+        return
+      end
+    end
+    @review = Review.new
   end
 
 

@@ -8,12 +8,15 @@ require 'nokogiri'
 module Tools
 
   class Scrape
+    attr_reader :success
 
     def initialize(uri)
+      @success = false
       @uri = uri
       retry_count = 0
       begin
         @doc = Nokogiri::HTML(open(@uri))
+        @success = true
       rescue OpenURI::HTTPError
         retry_count += 1
         retry if retry_count < 3
@@ -22,7 +25,6 @@ module Tools
 
     def get_params
       publisher, published_at = publisher_and_published_at
-
       {
         amazon_id: amazon_id,
         title: title,
@@ -54,7 +56,7 @@ module Tools
 
     def publisher_and_published_at
       publisher, published_at = nil
-      @doc .css('#detail_bullets_id').css('li').each do |li|
+      @doc.css('#detail_bullets_id').css('li').each do |li|
         if /出版社/.match(li.children.first.text)
           text = li.children.last.text
           publisher = text.sub(/\(.+\)$/, "").strip
