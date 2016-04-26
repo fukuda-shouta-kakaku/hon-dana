@@ -1,4 +1,5 @@
 class HondanaController < ApplicationController
-  def index
+  def index 
+    @books = Book.all;
   end
 end

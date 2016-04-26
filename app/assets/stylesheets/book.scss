@@ -1,0 +1,55 @@
+.book_box{
+    min-width:400px;
+    width:31.8%;
+    float:left;
+    margin:10px;
+}
+
+div.thumbnail{
+    padding:0px;
+}
+
+.book_img{
+    width:50%;
+    float:left;
+}
+
+.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.book-body{
+    padding:10px;
+    overflow:hidden;
+    clear:both;
+}
+
+.thumbnail .book-body .caption{
+    padding:0px 5px;
+    width:50%;
+    float:left;
+}
+
+.book-title{
+    line-height:150%;
+    font-size:15px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:2.5px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.book_column{
+    font-weight:bold;
+}
+
+.book_column_info{
+    margin:2.5px 0px 5px 7.5px;
+}
+
+.user_info{
+    margin-bottom:5px;
+}
+
