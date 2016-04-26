@@ -32,8 +32,12 @@ div.thumbnail{
     float:left;
 }
 
-.panel-title{
+.book-title{
     line-height:150%;
+    font-size:15px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:2.5px;
+    margin-bottom:5px;
     font-weight:bold;
 }
 
@@ -42,9 +46,10 @@ div.thumbnail{
 }
 
 .book_colum_info{
-    margin:2.5px 0px 7.5px 7.5px;
+    margin:2.5px 0px 5px 7.5px;
 }
 
 .user_info{
-    margin-bottom:7.5px;
+    margin-bottom:5px;
 }
+
