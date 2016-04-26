@@ -1,13 +1,7 @@
-<div class="row">
-  <div class="center-block">
-  <ul>
-    <li>name: <%= @user.name %></li>
-    <li>description: <%= simple_format(h(@user.description)) %></li>
-  </ul>
-  </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <%= render partial: 'shared/books', collection: @books %>
+    <h1 class="page_top" id="user_top"><%= h(@user.name) %></h1>
+    <div class="user_des"><%= simple_format(h(@user.description)) %></div>
+    <div class="container-fluid">
+        <div class="row">
+            <%= render partial: 'shared/books', collection: @books %>
+        </div>
     </div>
-</div>
