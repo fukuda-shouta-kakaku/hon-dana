@@ -17,6 +17,12 @@
     <div class="panel-footer">
        <div class="user_info">投稿者 <a href="#">まさる</a> 投稿日 2016/4/15</div>
        <div class="user_review_info">アニメ放送前に突然の出版。描き下ろしではないがファンも、これからのファンも読むしかない！</div>
+       <% if @user and is_owner?(@user.id) %> 
+        <div class="book_botton">
+            <a href="#" class="btn btn-primary" role="button">rewrite</a>
+            <a href="#" class="btn btn-danger" role="button">delete</a>
+        </div>
+       <% end %>
     </div>
   </div>
 </div>
