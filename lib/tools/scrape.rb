@@ -39,11 +39,17 @@ module Tools
     private
 
     def amazon_id
-      @amazon_id ||= @doc.css('#detail_bullets_id').css('li').each {|li| break li.children.last.text.strip if /ISBN-10/.match(li.children.first) }
+      m_obj = /\/([A-Z0-9]+{10})\//.match(@uri)
+      m_obj[1] if m_obj
     end
 
     def title
-      @doc.css('#productTitle').text
+      elems = @doc.css('#productTitle')
+      unless elems.empty?
+        elems.text
+      else
+        @doc.css('#ebooksProductTitle').text
+      end
     end
 
     def author
