@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :books
-  resources :reviews
+  resources :books, only: [:create]
+  resources :reviews, only: [:new, :create, :destroy, :edit]
 
   root to: 'hondana#index'
 

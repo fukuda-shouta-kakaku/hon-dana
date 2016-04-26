@@ -2,10 +2,6 @@ class BooksController < ApplicationController
 
   before_action :set_book, only: [:show]
 
-  def new
-
-  end
-
   def create
     scraped = Tools::Scrape.new(params[:search])
     unless scraped.success
