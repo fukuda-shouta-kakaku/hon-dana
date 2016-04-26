@@ -19,8 +19,8 @@
        <div class="user_review_info">アニメ放送前に突然の出版。描き下ろしではないがファンも、これからのファンも読むしかない！</div>
        <% if @user and is_owner?(@user.id) %> 
         <div class="book_botton">
-            <a href="#" class="btn btn-primary" role="button">rewrite</a>
-            <a href="#" class="btn btn-danger" role="button">delete</a>
+            <a href="#" id="review_write" data-id="" class="btn btn-primary" role="button">rewrite</a>
+            <a href="#" id="review_delete" data-id="" class="btn btn-danger" role="button">delete</a>
         </div>
        <% end %>
     </div>

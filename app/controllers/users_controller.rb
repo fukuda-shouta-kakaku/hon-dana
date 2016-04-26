@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-    @books = @user.books
+    @books = @user.reviews.includes(:book)
   end
 
   def new
