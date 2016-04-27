@@ -15,5 +15,8 @@
   <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
+<script>
+  __user_id = <%= logged_in? ? current_user.id : "null" %>;
+</script>
 </body>
 </html>

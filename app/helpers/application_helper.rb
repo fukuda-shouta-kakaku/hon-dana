@@ -1,5 +1,5 @@
 module ApplicationHelper
   def is_user_context
-    controller.controller_name == "users"
+    logged_in? && controller.controller_name == "users"
   end
 end
