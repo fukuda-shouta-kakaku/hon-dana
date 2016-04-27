@@ -1,20 +1,39 @@
-<p>amazon_id: <%= book.amazon_id %></p>
-<p>title: <%= book.title %></p>
-<p>author: <%= book.author %></p>
-<p>publisher: <%= book.publisher %></p>
-<p>published_at: <%= book.published_at %></p>
-<p>page: <%= book.page %></p>
-<p>img_src: <%= book.image_src %></p>
-
-<%= form_for review, { controller: :reviews, action: :create } do |f| %>
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body, row: 5 %>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="thumbnail" id="">
+      <div class="book-body">
+        <img class="preview-book-img" src="<%= h(book.image_src)%>">
+        <div class="preview-book-caption">
+          <div class="book-title"><%= h(book.title) %></div>
+          <div class="book_column">著者</div>
+          <div class="book_column_info"><%= h(book.author) %></div>
+          <div class="book_column">出版社</div>
+          <div class="book_column_info"><%= h(book.publisher) %></div>
+          <div class="book_column">出版日</div>
+          <div class="book_column_info"><%= h(book.published_at) %></div>
+          <div class="book_column">ページ数</div>
+          <div class="book_column_info"><%= h(book.page) %></div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+<%= form_for review, { controller: :reviews, action: :create, class: "form-horizontal"} do |f| %>
+  <div class="field form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 5, class: "form-control" %>
+  </div>
+
+  <%= label_tag "tags" %>
+  <div id="tag_form" class="field form-group">
+  </div>
+
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :book_id, value: book.id%>
 
-  <div id="tag_form">
-  </div>
-  <%= f.submit 'Create New Review' %>
+  <%= f.submit 'Create New Review', class: "btn btn-primary" %>
 <% end %>
+</div>
