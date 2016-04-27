@@ -1,6 +1,7 @@
 <% @reviews.each do |review| %>
 <div class="col-sm-6 col-md-4 review_box" id="review_<%= review.id %>">
   <div class="thumbnail" id="">
+    <a href="/books/<%= review.book.id %>">
     <div class="book-body">
       <img class="book_img" src="<%= h(review.book.image_src)%>">
       <div class="caption">
@@ -15,6 +16,7 @@
         <div class="book_column_info"><%= h(review.book.page) %></div>
       </div>
     </div>
+    </a>
     <div class="panel-footer">
        <div class="user_info">投稿者 <a href="/users/<%= h(review.user.id)%>"><%= h(review.user.name)%></a> 投稿日 2016/4/15</div>
        <div id="review_info_<%= review.id %>"class="user_review_info"><%= h(review.body) %></div>
@@ -28,3 +30,43 @@
   </div>
 </div>
 <% end %>
+
+<div class="modal fade" id="delete_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">delete review</h4>
+      </div>
+      <div class="modal-body">
+        If you delete this review , it can not be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="dia_delete_btn" class="btn btn-danger">delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="rewrite_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">rewite review</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="message-text" class="control-label">review:</label>
+            <textarea class="form-control" rows="3" id="review-text"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="dia_rewrite_btn" class="btn btn-primary">save</button>
+      </div>
+    </div>
+  </div>
+</div>

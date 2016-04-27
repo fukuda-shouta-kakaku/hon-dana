@@ -34,6 +34,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find_by_id(params[:id]) \
+      or render text: "404", status: 404
+    @reviews = @book.reviews.order("id desc");
   end
 
 
