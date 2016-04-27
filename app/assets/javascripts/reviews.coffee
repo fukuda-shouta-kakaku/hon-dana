@@ -28,6 +28,7 @@ init = ->
       .addClass "disabled"
     $("#search")
       .prop "readonly", true
+    $(".error-url-box").remove()
 
   $(document).on 'click', '.remove_tag_btn',  ->
     $(@).parent().remove()
