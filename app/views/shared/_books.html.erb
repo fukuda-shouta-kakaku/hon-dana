@@ -18,7 +18,14 @@
     <div class="panel-footer">
        <div class="user_info">投稿者 <a href="/users/<%= h(review.user.id)%>"><%= h(review.user.name)%></a> 投稿日 2016/4/15</div>
        <div id="review_info_<%= review.id %>"class="user_review_info"><%= h(review.body) %></div>
-       <% if @user and is_owner?(@user.id) %> 
+       <% if @user and is_owner?(@user.id) %>
+       <div>
+         <p>タグ:
+         <% review.book.get_tags_per_user(current_user).each do |tag| %>
+           <%= tag.label %>
+         <% end %>
+         </p>
+       </div>
         <div class="book_botton">
             <button type="button" id="rewrite_btn" data-id="<%= review.id %>" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rewrite_dialog">rewrite</button>
             <button type="button" data-id="<%= review.id %>" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#delete_dialog">delete</button>

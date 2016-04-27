@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   has_many :tags, through: :tag_relationships, source: :tag
 
   def get_tags_per_user(user)
-    TagRelationship.where(user_id: user.id).map(&:tag)
+    tag_relationships.where(user_id: user.id).map(&:tag)
   end
 
   has_many :users, through: :reviews
