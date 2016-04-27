@@ -27,6 +27,13 @@ class ReviewsController < ApplicationController
     puts params[:tags]
     puts "#######################################"
 
+    tags = params[:tags] || []
+    rels = TagRelationship.where(user_id: current_user.id)
+    if tags.empty?
+      rels.each { |rel| rel.destroy }
+    else
+
+    end
     @review = current_user.reviews.find_by(id: params[:id])
     return redirect_to root_url if @review.nil?
     @review.update_attributes(:body => params[:body])
