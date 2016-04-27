@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :review_books, through: :reviews, source: :book
 
-  has_many :tags, dependent: :destroy
-  has_many :tag_books, through: :tags, source: :book
+  has_many :tag_relationships, dependent: :destroy
+  has_many :tags, through: :tag_relationships, source: :tag
 end
