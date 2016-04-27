@@ -8,4 +8,6 @@ class Book < ActiveRecord::Base
   def get_tag_list_per_user(user)
     TagRelationship.where(user_id: 1).map {|r| r.tag }
   end
+
+  has_many :users, through: :reviews
 end

@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:edit, :update]
+  before_action :authenticate_user, only: [:edit, :update, :search]
   before_action :set_user, only: [:show]
 
   def show
+    @reviews = Review.includes(:book).includes(:user).where("reviews.user_id =?",@user.id).limit(30).order("id desc")
   end
 
   def new
@@ -33,6 +34,10 @@ class UsersController < ApplicationController
       flash[:danger] = "Updating profile failed..."
       render 'edit'
     end
+  end
+
+  def search
+    @reviews = Review.search(params[:keywords], user_id: @user.id)
   end
 
   private

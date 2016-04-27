@@ -9,3 +9,12 @@ two:
   user_id: 1
   book_id: 2
   body: MyString
+three:
+  user_id: 2
+  book_id: 1
+  body: MyString
+
+four:
+  user_id: 2
+  book_id: 2
+  body: MyString

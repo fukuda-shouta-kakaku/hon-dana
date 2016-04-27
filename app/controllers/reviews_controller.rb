@@ -21,6 +21,10 @@ class ReviewsController < ApplicationController
     redirect_to current_user
   end
 
+  def search
+    @reviews = Review.search(params[:keywords])
+  end
+
   private
 
   def review_params
