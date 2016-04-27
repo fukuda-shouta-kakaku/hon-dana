@@ -1,5 +1,5 @@
 <% @reviews.each do |review| %>
-<div class="col-sm-6 col-md-4 review_box">
+<div class="col-sm-6 col-md-4 review_box" id="review_<%= review.id %>">
   <div class="thumbnail" id="">
     <div class="book-body">
       <img class="book_img" src="<%= h(review.book.image_src)%>">
@@ -17,11 +17,11 @@
     </div>
     <div class="panel-footer">
        <div class="user_info">投稿者 <a href="/users/<%= h(review.user.id)%>"><%= h(review.user.name)%></a> 投稿日 2016/4/15</div>
-       <div class="user_review_info"><%= h(review.body) %></div>
+       <div id="review_info_<%= review.id %>"class="user_review_info"><%= h(review.body) %></div>
        <% if @user and is_owner?(@user.id) %> 
         <div class="book_botton">
-            <a href="#" id="review_write" data-id="" class="btn btn-primary" role="button">rewrite</a>
-            <a href="#" id="review_delete" data-id="" class="btn btn-danger" role="button">delete</a>
+            <button type="button" id="rewrite_btn" data-id="<%= review.id %>" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rewrite_dialog">rewrite</button>
+            <button type="button" data-id="<%= review.id %>" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#delete_dialog">delete</button>
         </div>
        <% end %>
     </div>

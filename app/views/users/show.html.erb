@@ -5,3 +5,43 @@
             <%= render partial: 'shared/books', locals: { reviews: @reviews } %>
         </div>
     </div>
+
+<div class="modal fade" id="delete_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">delete review</h4>
+      </div>
+      <div class="modal-body">
+        If you delete this review , it can not be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="dia_delete_btn" class="btn btn-danger">delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="rewrite_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">rewite review</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="message-text" class="control-label">review:</label>
+            <textarea class="form-control" rows="3" id="review-text"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="dia_rewrite_btn" class="btn btn-primary">save</button>
+      </div>
+    </div>
+  </div>
+</div>
