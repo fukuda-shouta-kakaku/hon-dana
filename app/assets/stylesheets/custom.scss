@@ -106,10 +106,11 @@ h1{
 
 .alert {
   position: fixed;
-  top: 50px; /* nav-bar's height */
+  top: 10px; /* nav-bar's height */
   left: 10%;
   width: 80%;
   height: 60px;
+  z-index: 1000000;
 }
 
 .input-group .input-group-btn button.form-control.search-selector-btn {
