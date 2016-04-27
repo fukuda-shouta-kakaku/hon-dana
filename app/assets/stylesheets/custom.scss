@@ -123,6 +123,31 @@ h1{
   float: right;
 }
 
+.add_tag_field {
+  width: 100px;
+}
+.glyph {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.glyph-red {
+   color: red;
+}
+
+.glyph-green {
+   color: green;
+}
+
+.form-control[readonly].remove_tag_field {
+  background-color: #bbffbb;
+}
+
+.url-field-box {
+  margin-right: -13px;
+}
+
 .page_top{
    padding-left:10px;
    border-bottom:2px solid #e7e7e7;
