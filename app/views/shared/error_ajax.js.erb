@@ -1,3 +1,8 @@
 $('#book_info').html(
   "<%= escape_javascript(@msg) %>"
 )
+$(".loader").remove();
+$("#url-submit").removeClass("disabled");
+$("#search")
+  .prop("readonly", false)
+  .val("");
