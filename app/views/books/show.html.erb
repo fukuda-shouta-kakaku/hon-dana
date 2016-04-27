@@ -1,0 +1,44 @@
+<div id="book_box" class="clearfix">
+<div class="col-sm-12 col-md-12 review_box">
+  <div class="thumbnail">
+    <div class="book-body">
+      <img class="book_img" src="<%= h(@book.image_src)%>">
+      <div class="caption">
+        <div class="book-title"><%= h(@book.title) %></div>
+        <div class="book_column">著者</div>
+        <div class="book_column_info"><%= h(@book.author) %></div>
+        <div class="book_column">出版社</div>
+        <div class="book_column_info"><%= h(@book.publisher) %></div>
+        <div class="book_column">出版日</div>
+        <div class="book_column_info"><%= h(@book.published_at) %></div>
+        <div class="book_column">ページ数</div>
+        <div class="book_column_info"><%= h(@book.page) %></div>
+      </div>
+    </div>
+    <% if !@user.books.include?(@book) %>
+        <div class="panel-footer">
+          <div class="user_info">post new review</div>
+              <%= form_for(@review,:url => {:controller => :reviews, :action => :post}) do |f| %>
+                <br><%= f.label :body %>
+                <br><%= f.text_area :body %>
+                <%= hidden_field_tag 'review[user_id]',@user.id %>
+                <%= hidden_field_tag 'review[book_id]',@book.id %>
+                <br><%= f.submit "post review", class: "btn btn-large btn-primary" %>
+            <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+</div>
+
+<div class="review_only_box">
+  <h1 class="page_top"><%= @reviews.count %>reviews</h1>
+  <% @reviews.each do |review| %>
+    <div class="list-group-item">
+       <div class="user_info">投稿者 <a href="/users/<%= h(review.user.id)%>"><%= h(review.user.name)%></a> 投稿日 2016/4/15</div>
+       <div id="review_info_<%= review.id %>"class="user_review_info"><%= h(review.body) %></div>
+    </div>
+   <% end %>
+</div>
+

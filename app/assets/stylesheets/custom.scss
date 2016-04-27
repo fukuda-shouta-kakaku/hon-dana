@@ -140,6 +140,10 @@ h1{
    color: green;
 }
 
+.error-url-box {
+   color: red;
+}
+
 .form-control[readonly].remove_tag_field {
   background-color: #bbffbb;
 }
@@ -161,4 +165,8 @@ h1{
 #user_top{
     text-align:center;
     margin-bottom:0px;
+}
+
+.review_box {
+    margin-bottom: 20px;
 }
