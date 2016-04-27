@@ -13,5 +13,8 @@
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :book_id, value: book.id%>
+
+  <div id="tag_form">
+  </div>
   <%= f.submit 'Create New Review' %>
 <% end %>
