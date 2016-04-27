@@ -1,7 +1,20 @@
-<%= form_tag({ controller: :books, action: :create }, remote: true, class: :form_ajax) do %>
-<%= text_field_tag :search, '', size: 100 %>
-<%= submit_tag '検索' %>
-<% end %>
+<h1>Write review</h1>
 
-<div id="book_info">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-2 url-field-box">
+<%= form_tag({ controller: :books, action: :create }, remote: true, id: "form_ajax", class: "form-horizontal") do %>
+  <div class="form-group col-sm-10">
+    <%= text_field_tag :search, '', size: 100, class: "form-control", placeholder: "Fill in the Amazon URL", required: true %>
+  </div>
+  <div class="form-group col-sm-2">
+    <%= submit_tag '検索', id: "url-submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
+    </div>
+  </div>
+    <div id="spinner-wrapper" class="col-sm-8 col-sm-offset-2">
+    </div>
+  <div id="book_info">
+  </div>
 </div>
