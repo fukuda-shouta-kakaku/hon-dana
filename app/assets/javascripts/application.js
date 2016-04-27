@@ -16,6 +16,22 @@
 //= require_tree .
 
 
-$(document).ready (function(){
+$(document).ready (function() {
   $(".alert").fadeTo(2000, 500).slideUp(500);
+
+  setupToggleSearchSelector();
 });
+
+function setupToggleSearchSelector() {
+  $("#search-selector li").on("click", function() {
+    var selected_string = $(this).find("a").html();
+    if (__user_id && selected_string == "my bookshelf") {
+      $("#search-form").attr("action", "/users/"+ __user_id + "/search");
+    }
+    else {
+      $("#search-form").attr("action", "/search");
+    }
+      $("#search-selector-btn").html(selected_string);
+    $("#search-field").prop("placeholder", "search in " + selected_string );
+  });
+}

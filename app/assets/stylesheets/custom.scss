@@ -112,6 +112,16 @@ h1{
   height: 60px;
 }
 
+.input-group .input-group-btn button.form-control.search-selector-btn {
+  width: 130px;
+  padding: 5px;
+}
+
+.input-group .input-group-btn button.form-control.search-selector-btn:after {
+  content: '▼';
+  float: right;
+}
+
 .page_top{
    padding-left:10px;
    border-bottom:2px solid #e7e7e7;

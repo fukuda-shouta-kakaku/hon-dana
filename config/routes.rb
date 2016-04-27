@@ -16,7 +16,14 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  resources :users
+  resources :users do
+    member do
+      post 'search'
+    end
+  end
+
+  post   'search', to: 'reviews#search'
+
   get    'signup', to: 'users#new'
   get    'login' , to: 'sessions#new'
   post   'login' , to: 'sessions#create'

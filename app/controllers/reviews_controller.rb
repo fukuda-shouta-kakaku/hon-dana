@@ -29,6 +29,10 @@ class ReviewsController < ApplicationController
     render :text => "0", :layout => false and return
   end
 
+  def search
+    @reviews = Review.search(params[:keywords])
+  end
+
   private
 
   def update_params

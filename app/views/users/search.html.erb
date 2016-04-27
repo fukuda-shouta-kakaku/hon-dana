@@ -1,0 +1,7 @@
+    <h1 class="page_top" id="user_top"><%= h(@user.name) %></h1>
+    <div class="user_des"><%= simple_format(h(@user.description)) %></div>
+    <div class="container-fluid">
+        <div class="row">
+            <%= render partial: 'shared/books', locals: { reviews: @reviews } %>
+        </div>
+    </div>
