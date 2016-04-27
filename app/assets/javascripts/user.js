@@ -53,8 +53,8 @@ $(function(){
     $("#add_tag_btn").click(function() {
         var value =  $('#add_tag_field').val()
         $('#add_tag_field').val("")
-        $p = $('<p>').append($("<input class=remove_tag_field type=text name=tags[] value=" + value + ">"))
-                     .append($('<input class=remove_tag_btn type=button value=remove>'));
+        $p = $('<div class="form-inline">').append($("<input class='remove_tag_field form-control' type=text name=tags[] readonly value=" + value + ">"))
+                     .append($('<span class="remove_tag_btn glyph glyph-red glyphicon glyphicon-remove-sign" aria-hidden="true"></span>'));
         $('#tag_form').append($p)
     });
 });
