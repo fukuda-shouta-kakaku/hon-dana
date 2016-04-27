@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
       flash[:danger] = 'Failed Post review'
     end
 
-    params[:tags].each do |label|
+    tags = params[:tags] || []
+    tags.each do |label|
       tag = Tag.find_or_create_by(label: label) unless label.empty?
       trel = TagRelationship.new(user_id: current_user.id, book_id: params[:review][:book_id], tag_id: tag.id)
       trel.save
@@ -21,9 +22,13 @@ class ReviewsController < ApplicationController
     redirect_to current_user
   end
 
-  def update 
+  def update
+    puts "#######################################"
+    puts params[:tags]
+    puts "#######################################"
+
     @review = current_user.reviews.find_by(id: params[:id])
-    return redirect_to root_url if @review.nil? 
+    return redirect_to root_url if @review.nil?
     @review.update_attributes(:body => params[:body])
     render :text => @review.body, :layout => false and return
   end

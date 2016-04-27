@@ -1,11 +1,11 @@
 $(function(){
     $(document).on("click", ".book_botton button", function () {
         var review_id = $(this).data('id');
-        $(".modal-footer button").attr('data-id',review_id); 
+        $(".modal-footer button").attr('data-id',review_id);
     });
 
     $(document).on("click","#rewrite_btn", function () {
-        var review_id = $(this).data('id'); 
+        var review_id = $(this).data('id');
         review_text = $("#review_info_"+review_id).html();
         $("#review-text").val(review_text);
     });
@@ -13,12 +13,16 @@ $(function(){
     $(document).on('click','#dia_rewrite_btn',function(){
         var id = $(this).data("id");
         var text =  $("#review-text").val();
-        console.log(text);
+
+        var list = [];
+        var tags = $('[name="tags[]"]').each(function() { list.push(this.value); });
+
         $.ajax({
             type: 'POST',
             url: "/reviews/update/"+id,
             data: {
-                "body": text
+                "body": text,
+                "tags": list
             },
             success: function(json){
                 $("#review_info_"+id).html(json);
@@ -44,5 +48,13 @@ $(function(){
         });
         $('#delete_dialog').modal('hide');
         return false;
+    });
+
+    $("#add_tag_btn").click(function() {
+        var value =  $('#add_tag_field').val()
+        $('#add_tag_field').val("")
+        $p = $('<p>').append($("<input class=remove_tag_field type=text name=tags[] value=" + value + ">"))
+                     .append($('<input class=remove_tag_btn type=button value=remove>'));
+        $('#tag_form').append($p)
     });
 });
