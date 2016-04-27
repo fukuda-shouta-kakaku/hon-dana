@@ -74,6 +74,11 @@ div.thumbnail{
 }
 
 .review_only_box{
- width:65%;
-  margin-left:33%;
+  float:left;
+  width:60%;
+}
+
+#book_box{
+    width:500px;
+    float:left;
 }
