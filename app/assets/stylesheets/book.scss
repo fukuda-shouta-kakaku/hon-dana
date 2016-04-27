@@ -75,10 +75,25 @@ div.thumbnail{
 
 .review_only_box{
   float:left;
-  width:60%;
+  width:55%;
 }
 
 #book_box{
     width:500px;
     float:left;
+}
+
+#book_box .review_box{
+    height:650px;
+}
+
+#book_box textarea{
+  width:100%;
+  height:80px;
+  margin:5px;
+}
+
+#book_box input{
+  margin:10px;
+  margin-left:300px;
 }

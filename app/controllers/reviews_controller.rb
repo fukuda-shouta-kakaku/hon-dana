@@ -5,6 +5,16 @@ class ReviewsController < ApplicationController
 
   end
 
+  def post 
+    @review = Review.new(review_params)
+    if @review.save
+      flash[:success] = 'Post review'
+    else
+      flash[:danger] = 'Failed Post review'
+    end
+    redirect_to :back
+  end
+
   def create
     @review = Review.new(review_params)
     if @review.save

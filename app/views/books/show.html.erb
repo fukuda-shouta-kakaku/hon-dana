@@ -15,6 +15,18 @@
         <div class="book_column_info"><%= h(@book.page) %></div>
       </div>
     </div>
+    <% if !@user.books.include?(@book) %>
+        <div class="panel-footer">
+          <div class="user_info">post new review</div>
+              <%= form_for(@review,:url => {:controller => :reviews, :action => :post}) do |f| %>
+                <br><%= f.label :body %>
+                <br><%= f.text_area :body %>
+                <%= hidden_field_tag 'review[user_id]',@user.id %>
+                <%= hidden_field_tag 'review[book_id]',@book.id %>
+                <br><%= f.submit "post review", class: "btn btn-large btn-primary" %>
+            <% end %>
+        </div>
+    <% end %>
   </div>
 </div>
 
