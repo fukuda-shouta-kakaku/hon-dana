@@ -32,7 +32,12 @@ class ReviewsController < ApplicationController
     if tags.empty?
       rels.each { |rel| rel.destroy }
     else
-
+      tag_ids = tags.map {|t| Tag.find_or_create_by(label: t).id }
+      puts "#######################################"
+      puts tag_ids
+      puts "#######################################"
+      tag_ids.each {|id| TagRelationship.find_or_create_by(user_id: current_user.id, book_id: params[:id], tag_id: id)}
+      TagRelationship.where.not(tag_id: tag_ids).where(user_id: current_user.id).each {|rel| rel.destroy }
     end
     @review = current_user.reviews.find_by(id: params[:id])
     return redirect_to root_url if @review.nil?
